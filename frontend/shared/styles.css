@@ -1,0 +1,8 @@
+body { font-family: Inter, system-ui, sans-serif; }
+.container { max-width: 900px; }
+.card.app-card { border-radius: 10px; margin-bottom: 12px; padding: 12px; }
+.app-card-left { display:flex; flex-direction:column; }
+.app-card-right { text-align:right; }
+.badge-status { padding:6px 10px; border-radius:8px; }
+.upload-block { border:1px dashed #ddd; padding:10px; border-radius:8px; margin-bottom:10px; background:#fff; }
+small.muted { color:#666; }

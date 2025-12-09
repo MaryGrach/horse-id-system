@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Заявка</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+<style>
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+.file-box {
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: #fafafa;
+}
+.upload-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px solid #cbd5e1;
+    background:white;
+    cursor:pointer;
+}
+.upload-btn:hover {
+    background:#f1f5f9;
+}
+</style>
+
+</head>
+
+<body class="font-display bg-background-light">
+
+<div class="w-full max-w-4xl mx-auto mt-6 px-4">
+    <button id="backButton"
+        class="text-gray-700 hover:text-black transition">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+</div>
+
+<!-- ОСНОВНОЙ КОНТЕЙНЕР -->
+<div class="flex min-h-screen w-full justify-center p-4 sm:p-6 md:p-8">
+<div class="w-full max-w-4xl bg-white border border-slate-300 rounded-xl p-6 sm:p-8">
+
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end mb-8">
+
+    <!-- RU -->
+    <div>
+        <label class="block text-sm text-slate-600 mb-1">Кличка (рус.)</label>
+        <input id="horseNameRu" type="text"
+            class="w-full rounded-md border-slate-300 py-1.5"
+            placeholder="Звездочка">
+    </div>
+
+    <!-- EN -->
+    <div>
+        <label class="block text-sm text-slate-600 mb-1">Кличка (англ.)</label>
+        <input id="horseNameEn" type="text"
+            class="w-full rounded-md border-slate-300 py-1.5"
+            placeholder="Starlet">
+    </div>
+
+    <!-- Год -->
+    <div>
+        <label class="block text-sm text-slate-600 mb-1">Год рождения</label>
+        <input id="horseYear" type="number"
+            class="w-full rounded-md border-slate-300 py-1.5 appearance-none"
+            placeholder="2020" min="1990" max="2099">
+    </div>
+
+    <!-- Статус -->
+    <div class="text-right sm:pl-4">
+        <div class="text-slate-500 text-sm" id="applicationStatus">
+            статус: —
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 📄 ДОКУМЕНТЫ -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- 1 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Заявление о выдаче паспорта</p>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined text-gray-600">add</span>
+            <input id="file_passport_application" type="file" class="hidden" accept=".pdf,.jpg,.png,.jpeg">
+        </label>
+        <div id="list_passport_application" class="mt-2 text-sm"></div>
+    </div>
+
+    <!-- 2 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Паспорт или договор</p>
+        <select id="select_ownership" class="w-full mb-2 rounded-md border-slate-300 py-1.5">
+            <option value="passport">Паспорт лошади</option>
+            <option value="contract">Договор купли-продажи</option>
+        </select>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined">add</span>
+            <input id="file_ownership_or_contract" type="file" class="hidden" multiple>
+        </label>
+        <div id="list_ownership_or_contract" class="mt-2 text-sm"></div>
+    </div>
+
+    <!-- 3 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Ведомость / Сертификат</p>
+        <select id="select_breeding" class="w-full mb-2 rounded-md border-slate-300 py-1.5">
+            <option value="breeding">Ведомость случки-выжеребки</option>
+            <option value="certificate">Случной сертификат</option>
+        </select>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined">add</span>
+            <input id="file_breeding_or_certificate" type="file" class="hidden">
+        </label>
+        <div id="list_breeding_or_certificate" class="mt-2 text-sm"></div>
+    </div>
+
+    <!-- 4 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Акт идентификации</p>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined">add</span>
+            <input id="file_foal_identification_act" type="file" class="hidden">
+        </label>
+        <div id="list_foal_identification_act" class="mt-2 text-sm"></div>
+    </div>
+
+    <!-- 5 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Генетический сертификат</p>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined">add</span>
+            <input id="file_genetic_certificate" type="file" class="hidden">
+        </label>
+        <div id="list_genetic_certificate" class="mt-2 text-sm"></div>
+    </div>
+
+    <!-- 6 -->
+    <div class="file-box">
+        <p class="text-sm text-slate-700 mb-2">Фото / Видео жеребёнка</p>
+        <label class="upload-btn">
+            <span class="material-symbols-outlined">add</span>
+            <input id="file_media" type="file" class="hidden" multiple accept=".jpg,.jpeg,.png,.mp4,.mov">
+        </label>
+        <div id="list_media" class="mt-2 text-sm"></div>
+    </div>
+
+</div>
+
+<div class="flex pt-10 justify-end">
+    <button id="submitButton"
+        class="h-10 px-5 rounded-lg text-white bg-blue-500 hover:bg-blue-400 font-semibold">
+        отправить
+    </button>
+</div>
+<!-- JS скрипты страницы заявки -->
+<script type="module" src="js/application.js"></script>
+
+</body>
+</html>
+
+</div>
+</d

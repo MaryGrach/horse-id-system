@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск заявок</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../shared/styles.css">
+</head>
+
+<body class="min-h-full bg-gray-100 text-gray-900 flex flex-col">
+
+    <!-- HEADER -->
+    <header class="w-full bg-white shadow-sm py-4 px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-semibold">База заявок</h1>
+        <button id="createButton"
+                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Создать заявку
+        </button>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="flex flex-col items-center mt-10 px-4">
+
+        <!-- SEARCH BAR -->
+        <div class="w-full max-w-2xl flex gap-3">
+            <input id="searchInput"
+                   type="text"
+                   placeholder="Введите кличку или часть клички"
+                   class="flex-1 px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500">
+            <button id="searchButton"
+                    class="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+                Поиск
+            </button>
+        </div>
+
+        <!-- RESULTS TITLE -->
+        <div id="resultsTitle" class="w-full max-w-2xl mt-10 text-xl font-medium hidden">
+            Результаты поиска
+        </div>
+
+        <!-- RESULTS LIST -->
+        <div id="resultsContainer"
+             class="w-full max-w-2xl mt-4 flex flex-col gap-4">
+            <!-- Карточки заявок будут появляться здесь -->
+        </div>
+
+        <!-- EMPTY RESULT -->
+        <div id="emptyMessage"
+             class="w-full max-w-2xl mt-6 text-gray-600 text-lg hidden">
+            Заявки с такой кличкой нет. Чтобы добавить новую заявку, нажмите на кнопку «Создать заявку».
+        </div>
+
+    </main>
+
+
+    <script type="module" src="./js/index.js"></script>
+
+</body>
+</html>
