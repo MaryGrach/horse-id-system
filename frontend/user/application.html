@@ -34,6 +34,14 @@
 .upload-btn:hover {
     background:#f1f5f9;
 }
+.file-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-box .upload-btn {
+  align-self: center; /* центр по горизонтали только для кнопки */
+}
 </style>
 
 </head>
@@ -43,7 +51,7 @@
 <div class="w-full max-w-4xl mx-auto mt-6 px-4">
     <button id="backButton"
         class="text-gray-700 hover:text-black transition">
-        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="material-symbols-outlined">← К списку</span>
     </button>
 </div>
 
@@ -94,7 +102,7 @@
     <div class="file-box">
         <p class="text-sm text-slate-700 mb-2">Заявление о выдаче паспорта</p>
         <label class="upload-btn">
-            <span class="material-symbols-outlined text-gray-600">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_passport_application" type="file" class="hidden" accept=".pdf,.jpg,.png,.jpeg">
         </label>
         <div id="list_passport_application" class="mt-2 text-sm"></div>
@@ -108,7 +116,7 @@
             <option value="contract">Договор купли-продажи</option>
         </select>
         <label class="upload-btn">
-            <span class="material-symbols-outlined">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_ownership_or_contract" type="file" class="hidden" multiple>
         </label>
         <div id="list_ownership_or_contract" class="mt-2 text-sm"></div>
@@ -122,7 +130,7 @@
             <option value="certificate">Случной сертификат</option>
         </select>
         <label class="upload-btn">
-            <span class="material-symbols-outlined">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_breeding_or_certificate" type="file" class="hidden">
         </label>
         <div id="list_breeding_or_certificate" class="mt-2 text-sm"></div>
@@ -132,7 +140,7 @@
     <div class="file-box">
         <p class="text-sm text-slate-700 mb-2">Акт идентификации</p>
         <label class="upload-btn">
-            <span class="material-symbols-outlined">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_foal_identification_act" type="file" class="hidden">
         </label>
         <div id="list_foal_identification_act" class="mt-2 text-sm"></div>
@@ -142,7 +150,7 @@
     <div class="file-box">
         <p class="text-sm text-slate-700 mb-2">Генетический сертификат</p>
         <label class="upload-btn">
-            <span class="material-symbols-outlined">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_genetic_certificate" type="file" class="hidden">
         </label>
         <div id="list_genetic_certificate" class="mt-2 text-sm"></div>
@@ -152,7 +160,7 @@
     <div class="file-box">
         <p class="text-sm text-slate-700 mb-2">Фото / Видео жеребёнка</p>
         <label class="upload-btn">
-            <span class="material-symbols-outlined">add</span>
+            <span class="upload-plus">+</span>
             <input id="file_media" type="file" class="hidden" multiple accept=".jpg,.jpeg,.png,.mp4,.mov">
         </label>
         <div id="list_media" class="mt-2 text-sm"></div>
