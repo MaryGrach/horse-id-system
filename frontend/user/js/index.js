@@ -37,8 +37,8 @@ async function loadApplications(query) {
   }
 
   if (!Array.isArray(apps)) {
-    console.error("Ожидался массив заявок, пришло:", apps);
-    return;
+    console.warn("Ожидался массив заявок, пришло:", apps);
+    apps = [];
   }
 
   const list = document.getElementById("resultsContainer");
@@ -46,8 +46,10 @@ async function loadApplications(query) {
 
   if (apps.length === 0) {
     const empty = document.createElement("div");
-    empty.className = "text-gray-500 text-sm";
-    empty.textContent = "Заявки не найдены";
+    empty.className = "text-gray-500 text-sm leading-relaxed";
+    empty.innerHTML = `
+      <p class="mb-1">Заявки с такой кличкой нет. Чтобы добавить новую заявку, нажмите на кнопку «Создать заявку».</p>
+    `;
     list.appendChild(empty);
     return;
   }

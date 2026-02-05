@@ -110,7 +110,7 @@ func ptrToString(ptr *string) string {
 
 func isCyrillic(s string) bool {
 	for _, r := range s {
-		if (r >= 'А' && r <= 'я') || r == 'Ё' || r == 'ё' {
+		if (r >= 'А' && r <= 'я') || r == 'Ё' || r == 'ё' || r == ' ' {
 			continue
 		}
 		return false
@@ -120,7 +120,7 @@ func isCyrillic(s string) bool {
 
 func isLatin(s string) bool {
 	for _, r := range s {
-		if (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') {
+		if (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') || r == ' ' {
 			continue
 		}
 		return false
@@ -128,7 +128,6 @@ func isLatin(s string) bool {
 	return true
 }
 
-// GET /api/applications?search=... или ?q=...
 // GET /api/applications?search=. или ?q=.
 func SearchApplications(w http.ResponseWriter, r *http.Request) {
 	// поддерживаем оба варианта имени параметра: ?search= и ?q=
@@ -209,7 +208,6 @@ func SearchApplications(w http.ResponseWriter, r *http.Request) {
 	_ = enc.Encode(out)
 }
 
-// GET /api/applications/{id}
 // GET /api/applications/{id}
 func GetApplication(w http.ResponseWriter, r *http.Request) {
 	id := mux.Vars(r)["id"]
