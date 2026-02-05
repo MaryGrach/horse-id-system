@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = "https://horse-id-system-1.onrender.com/api";
 
 // Базовый запрос без админ-токена
 async function apiRequest(path, options = {}) {
