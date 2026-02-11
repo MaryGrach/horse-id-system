@@ -1,4 +1,4 @@
-const API_BASE = "https://horse-id-system-1.onrender.com/api";
+const API_BASE = "http://155.212.170.227";
 const MAX_BYTES = 200 * 1024 * 1024; // 200 MB
 const FORBIDDEN_EXT = /\.(exe|bat|cmd|sh|js|jar|py)$/i;
 
