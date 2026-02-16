@@ -1,0 +1,2 @@
+/admin  https://admin.horse-id-system.ru/  302!
+/admin/* https://admin.horse-id-system.ru/:splat 302!
