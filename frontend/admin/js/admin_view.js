@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = "https://api.horse-id-system.ru/api";
 const ADMIN_TOKEN = "secret123"; // должен совпадать с ADMIN_TOKEN на бэкенде
 
 async function apiRequest(path, { method = "GET", body = null, admin = false } = {}) {
