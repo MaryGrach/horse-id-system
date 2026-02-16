@@ -1,4 +1,4 @@
-const API_BASE = "https://api.horse-id-system.ru";
+const API_BASE = "https://api.horse-id-system.ru/api";
 
 // Базовый запрос без админ-токена
 async function apiRequest(path, options = {}) {

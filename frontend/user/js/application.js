@@ -1,4 +1,4 @@
-const API_BASE = "https://api.horse-id-system.ru";
+const API_BASE = "https://api.horse-id-system.ru/api";
 const MAX_BYTES = 200 * 1024 * 1024; // 200 MB
 const FORBIDDEN_EXT = /\.(exe|bat|cmd|sh|js|jar|py)$/i;
 
